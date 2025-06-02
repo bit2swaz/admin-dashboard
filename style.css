@@ -72,3 +72,27 @@ html {
 .sidebar .material-icons-outlined {
     font-size: 24px;
 }
+
+/* Header Styling */
+.header {
+    grid-column: 2; /* Main content column */
+    grid-row: 1; /* Header row */
+    background-color: #ffffff; /* White background from mockup */
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow at the bottom */
+    z-index: 1; /* Ensure shadow is visible over main content */
+
+    display: grid; /* Make header a grid for its content */
+    grid-template-rows: 1fr 1fr; /* Top row (search/user), Bottom row (greeting/buttons) */
+    grid-template-columns: 1fr auto; /* Search takes most space, user info/buttons align right */
+    align-items: center; /* Vertically center content in rows */
+}
+
+.header-top {
+    grid-column: 1 / span 2; /* Spans both columns of header grid */
+    display: grid;
+    grid-template-columns: 1fr auto; /* Search bar takes most space, user notifications align right */
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px; /* Space between top and bottom header sections */
+}
