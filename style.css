@@ -198,3 +198,151 @@ html {
     background-color: #147ab3;
 }
 
+/* Main Content Styling */
+.main-content {
+    grid-column: 2; /* Main content column */
+    grid-row: 2; /* Main content row */
+    background-color: #e2e8f0; /* Light grey background for main content area */
+    padding: 20px;
+
+    display: grid; /* Make main content a grid for its sections */
+    grid-template-columns: 3fr 1fr; /* Projects take 3 parts, announcements/trending take 1 part */
+    grid-template-rows: auto 1fr; /* Projects row, then announcements/trending row */
+    gap: 20px; /* Gap between main content sections */
+}
+
+.projects-section {
+    grid-column: 1;
+    grid-row: 1 / span 2; /* Spans both rows of main content grid */
+    padding: 10px; /* Internal padding */
+}
+
+.projects-section h3,
+.announcements-section h3,
+.trending-section h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.project-cards {
+    display: grid;
+    /* Auto-fit columns for responsive cards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Gap between project cards */
+}
+
+.card {
+    background-color: #ffffff; /* White background for cards */
+    border-left: 8px solid #f0b429; /* Orange border on left */
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex; /* Flex for content inside card */
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card .title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+    flex-grow: 1; /* Allow paragraph to grow and push actions to bottom */
+}
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end; /* Push icons to the right */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.card-actions .material-icons-outlined {
+    font-size: 1.3rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.announcements-section {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 10px; /* Internal padding */
+}
+
+.announcement-items {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: grid;
+    gap: 15px; /* Space between announcements */
+}
+
+.announcement-card {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0; /* Light separator line */
+}
+
+.announcement-card:last-child {
+    border-bottom: none; /* No border for the last one */
+    padding-bottom: 0;
+}
+
+.announcement-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.announcement-text {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.3;
+}
+
+.trending-section {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 10px; /* Internal padding */
+}
+
+.trending-items {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: grid;
+    gap: 15px; /* Space between trending profiles */
+}
+
+.trending-profile {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Avatar and text info */
+    align-items: center;
+    gap: 15px;
+}
+
+.trending-profile .avatar-small {
+    width: 40px;
+    height: 40px;
+}
+
+.trending-info p:first-child {
+    font-weight: 700;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.trending-info p:last-child {
+    color: #666;
+    font-size: 0.85rem;
+}
