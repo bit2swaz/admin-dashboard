@@ -20,3 +20,55 @@ html {
     height: 100%; /* Ensure container takes full height */
 }
 
+/* Sidebar Styling */
+.sidebar {
+    grid-column: 1;
+    grid-row: 1 / span 2; /* Spans from header row to end of main content row */
+    background-color: #1992d4; /* Blue color from mockup */
+    color: white;
+    padding: 16px;
+
+    display: grid; /* Make sidebar a grid for its content */
+    grid-template-rows: auto auto 1fr; /* Branding, Navigation, then Settings/Support */
+    gap: 30px; /* Space between main sidebar sections */
+}
+
+.sidebar .branding {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Icon and text */
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.sidebar .branding .material-icons-outlined {
+    font-size: 32px;
+}
+
+.sidebar .navigation ul,
+.sidebar .settings-support ul {
+    list-style: none;
+    display: grid; /* Make UL a grid for vertical list items */
+    gap: 15px; /* Space between list items */
+}
+
+.sidebar .navigation li,
+.sidebar .settings-support li {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Icon and text */
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.sidebar .navigation li:hover,
+.sidebar .settings-support li:hover {
+    text-decoration: underline;
+}
+
+.sidebar .material-icons-outlined {
+    font-size: 24px;
+}
