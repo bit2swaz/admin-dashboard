@@ -30,7 +30,7 @@ html {
 
     display: grid; /* Make sidebar a grid for its content */
     grid-template-rows: auto auto 1fr; /* Branding, Navigation, then Settings/Support */
-    gap: 30px; /* Space between main sidebar sections */
+    gap: 50px; /* Adjusted: Space between main sidebar sections to 50px */
 }
 
 .sidebar .branding {
@@ -228,9 +228,9 @@ html {
 
 .project-cards {
     display: grid;
-    /* Auto-fit columns for responsive cards */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; /* Gap between project cards */
+    /* Auto-fit columns for responsive cards, min 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted minmax to 250px */
+    gap: 15px; /* Adjusted: Gap between project cards to 15px */
 }
 
 .card {
@@ -242,6 +242,7 @@ html {
     display: flex; /* Flex for content inside card */
     flex-direction: column;
     gap: 10px;
+    height: 200px; /* Fixed height for cards */
 }
 
 .card .title {
@@ -345,4 +346,19 @@ html {
 .trending-info p:last-child {
     color: #666;
     font-size: 0.85rem;
+}
+
+.footer {
+    grid-column: 1 / span 2; /* Footer spans both columns */
+    grid-row: 3; /* Placed in the third row of the main grid */
+    background-color: #393f4d; /* Dark background */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+.footer p {
+    margin: 0;
 }
